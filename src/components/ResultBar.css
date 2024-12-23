@@ -1,0 +1,44 @@
+.ResultBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: darkgray;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+.player-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.black {
+  color: #000;
+}
+
+.white {
+  color: #fff;
+}
+
+.player-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.black-icon {
+  background-color: #000;
+}
+
+.white-icon {
+  background-color: #fff;
+  border: 1px solid #000;
+}
