@@ -1,0 +1,10 @@
+.Controles {
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Controler {
+    height: 50px;
+    width: 80px;
+}

@@ -6,7 +6,7 @@ import "./Board.css"
 export default function Board({ BoardState, SetBoardState, Turn, SetTurn }) {
     function ClickHandler(row, col) {
         if (BoardState[row][col] !== "Empty") return;
-        let newBoardState = [...BoardState];
+        let newBoardState = BoardState.map(row => row.slice());
 
         let isValid = false;
         for (let d = 0; d < dx.length; ++d){
