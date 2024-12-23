@@ -2,7 +2,6 @@ import React from "react";
 import "./ResultBar.css";
 
 export default function ResultBar({ blackScore, whiteScore }) {
-    console.log(blackScore, whiteScore);
   return (
     <div className="ResultBar">
       <div className="player-score black">

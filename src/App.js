@@ -29,8 +29,8 @@ function App() {
 
   const [BoardStateHistory, SetBoardStateHistory] = useState([]);
 
-  const [blackScore, SetWhiteScore] = useState(2);
-  const [whiteScore, SetWhiteCnt] = useState(2);
+  const [BlackScore, SetBlackScore] = useState(2);
+  const [WhiteScore, SetWhiteScore] = useState(2);
 
 
   function Reset() {
@@ -53,21 +53,28 @@ function App() {
     );
     SetBoardStateHistory([]);
     SetTurn("Black");
+    SetBlackScore(2);
+    SetWhiteScore(2);
     return;
   }
 
   function Undo() {
     if (BoardStateHistory.length > 0) {
-      SetBoardState(BoardStateHistory[BoardStateHistory.length - 1].map(row => row.slice()));
+      const [pBoardState, pBlackScore, pWhiteScore, pTurn] = BoardStateHistory.at(BoardStateHistory.length - 1);
+      console.log(pBoardState, pBlackScore, pWhiteScore, pTurn);
+      SetBoardState([...pBoardState.map(row => row.slice())]);
+      SetBlackScore(pBlackScore);
+      SetWhiteScore(pWhiteScore);
+      SetTurn(pTurn);
+
       let newBoardStateHistory = [...BoardStateHistory];
       newBoardStateHistory.pop();
       SetBoardStateHistory(newBoardStateHistory);
-      SetTurn(Turn === "Black" ? "White" : "Black");
     }
   }
 
   function Skip() {
-    SetBoardStateHistory([...BoardStateHistory.map(row => row.slice()), BoardState]);
+    SetBoardStateHistory([...BoardStateHistory.map(row => row.slice()), [BoardState, BlackScore, WhiteScore, Turn]]);
     SetTurn(Turn === "Black" ? "White" : "Black");
   }
 
@@ -77,8 +84,9 @@ function App() {
       <Board
         BoardState={BoardState}
         SetBoardState={(newBoardState) => {
-          SetBoardStateHistory(prevHistory => [...prevHistory, BoardState.map(row => row.slice())]);
+          SetBoardStateHistory(prevHistory => [...prevHistory, [BoardState.map(row => row.slice()), BlackScore, WhiteScore, Turn]]);
           SetBoardState(newBoardState.map(row => row.slice()));
+          
           let newblackScore = 0, newwhiteScore = 0;
           newBoardState.slice().map((v, _) => {
             v.map(
@@ -88,14 +96,14 @@ function App() {
               }
             )
           });
-          SetWhiteScore(newblackScore);
-          SetWhiteCnt(newwhiteScore);
+          SetBlackScore(newblackScore);
+          SetWhiteScore(newwhiteScore);
         }}
         Turn={Turn}
         SetTurn={SetTurn}
       />
       <Controles onReset={Reset} onUndo={Undo} onSkip={Skip} onResult={() => { }} />
-      <ResultBar blackScore={blackScore} whiteScore={whiteScore} />
+      <ResultBar blackScore={BlackScore} whiteScore={WhiteScore} />
     </div>
   );
 }
