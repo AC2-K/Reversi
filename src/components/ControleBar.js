@@ -1,5 +1,5 @@
 import React from "react";
-import "./Controles.css"
+import "./ControleBar.css"
     
 export default function ControlesBar({ onReset, onUndo, onSkip, onResult }) {
     return (

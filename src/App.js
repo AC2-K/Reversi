@@ -3,7 +3,7 @@ import "./App.css";
 import Board from "./components/Board";
 import { BoardHeight, BoardWidth } from "./utility/Constants";
 import Controles from "./components/ControleBar";
-import { PlaceDiff, PlaceStone } from "./functions/Board"
+import { PlaceDiff, PlaceStone } from "./utility/functions"
 import ResultBar from "./components/ResultBar";
 
 function App() {
