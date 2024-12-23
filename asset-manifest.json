@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Reversi/static/css/main.e84ff5b1.css",
-    "main.js": "/Reversi/static/js/main.f1d1b4d3.js",
+    "main.js": "/Reversi/static/js/main.940eddd9.js",
     "static/js/488.a9701405.chunk.js": "/Reversi/static/js/488.a9701405.chunk.js",
     "index.html": "/Reversi/index.html",
     "main.e84ff5b1.css.map": "/Reversi/static/css/main.e84ff5b1.css.map",
-    "main.f1d1b4d3.js.map": "/Reversi/static/js/main.f1d1b4d3.js.map",
+    "main.940eddd9.js.map": "/Reversi/static/js/main.940eddd9.js.map",
     "488.a9701405.chunk.js.map": "/Reversi/static/js/488.a9701405.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e84ff5b1.css",
-    "static/js/main.f1d1b4d3.js"
+    "static/js/main.940eddd9.js"
   ]
 }
