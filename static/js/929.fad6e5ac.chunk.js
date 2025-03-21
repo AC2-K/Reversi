@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmypage=self.webpackChunkmypage||[]).push([[929],{929:(e,p,s)=>{e.exports=s.p+"static/media/post-1.07817bc04ed07c701fcd.md"}}]);
